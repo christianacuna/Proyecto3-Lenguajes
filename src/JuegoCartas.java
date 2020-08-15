@@ -1,5 +1,21 @@
+import java.util.List;
+
 public class JuegoCartas {
-    public void start(){
+    private List<Jugador> listaJugadores;
+    //private Mazo mazo;
+
+    public void iniciarJuego(){
+
+    }
+
+    public void ejecutarJugada(List<String> lista){
+
+    }
+    public void verificarGanador(){
+
+    }
+
+    public void ejecutarRonda(){
 
     }
 }
