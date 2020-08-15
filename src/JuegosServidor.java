@@ -6,6 +6,7 @@ public class JuegosServidor extends Thread
 {
     private ServerSocket socket;
     private boolean running = false;
+    private int acumulador;
 
     public static void main(String[] args) {
 
@@ -35,14 +36,17 @@ public class JuegosServidor extends Thread
     public void run()
     {
         this.running = true;
+        acumulador = 0;
         while( this.running )
         {
             try
             {
                 System.out.println("Acepting Requests");
                 Socket NewSocket = this.socket.accept();
-                Jugador jugador = new Jugador(NewSocket);
-                httpProcessThread.start();
+                acumulador += 1;
+                Jugador jugador = new Jugador(NewSocket,acumulador);
+                JuegoCartas juegoCartas = new JuegoCartas();
+                juegoCartas.start();
             }
             catch (IOException e)
             {
