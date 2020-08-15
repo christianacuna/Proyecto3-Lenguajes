@@ -35,16 +35,16 @@ public class JuegosServidor extends Thread
         Scanner s = new Scanner(System.in);
         int n = s.nextInt();
         if (n > 0 && n < 5){
-            System.out.println(ANSI_GREEN+"Juego reconozido"+ANSI_RESET);
+            System.out.println(ANSI_GREEN+"Juego reconosido"+ANSI_RESET);
             return n;
         }else{
-            System.out.println(ANSI_RED+"Juego no reconzido" +ANSI_RESET);
+            System.out.println(ANSI_RED+"Juego no reconsido" +ANSI_RESET);
             return menu();
         }
     }
     public void stopServer()
     {
-        System.out.println("Server Stopping.");
+        System.out.println("Deteniendo");
         this.running = false;
         this.interrupt();
     }
