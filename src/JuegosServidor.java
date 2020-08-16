@@ -1,6 +1,9 @@
 import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 import java.util.Scanner;
 
 public class JuegosServidor extends Thread
@@ -17,16 +20,20 @@ public class JuegosServidor extends Thread
     public static final String ANSI_PURPLE = "\u001B[35m";
     public static final String ANSI_CYAN = "\u001B[36m";
     public static final String ANSI_WHITE = "\u001B[37m";
+    private int cantJugadores;
+    private int numJuego;
+    private List<Jugador> litaJugadores;
 
     public static void main(String[] args) {
 
         int port = 8080;
         System.out.println("Iniciando servidor en puerto: "+port);
         JuegosServidor server = new JuegosServidor();
-        int numeroJuego = menu();
-        server.startServer(port);
+        int numeroJuego = menu1();
+        int cantJugadores = menu2();
+        server.startServer(port,numeroJuego,cantJugadores);
     }
-    static private int menu(){
+    static private int menu1(){
         System.out.println(ANSI_CYAN+"Seleccione el juego de cartas [1-4]"+ANSI_RESET);
         System.out.println("1 - Hold'em");
         System.out.println("2 - FiveCards");
@@ -39,7 +46,19 @@ public class JuegosServidor extends Thread
             return n;
         }else{
             System.out.println(ANSI_RED+"Juego no reconsido" +ANSI_RESET);
-            return menu();
+            return menu1();
+        }
+    }
+    static private int menu2(){
+        System.out.println(ANSI_CYAN+"Seleccione la cantidad de jugadores [1-4]"+ANSI_RESET);
+        Scanner s = new Scanner(System.in);
+        int n = s.nextInt();
+        if (n > 0 && n < 5){
+            System.out.println(ANSI_GREEN+"Buscando "+ n +" jugadores"+ANSI_RESET);
+            return n;
+        }else{
+            System.out.println(ANSI_RED+"Cantidad de jugadores no soportado" +ANSI_RESET);
+            return menu2();
         }
     }
     public void stopServer()
@@ -48,12 +67,17 @@ public class JuegosServidor extends Thread
         this.running = false;
         this.interrupt();
     }
-    public void startServer(int port)
+    public void startServer(int port,int juegoId, int cantJugadores)
     {
         try{
 
             this.socket = new ServerSocket(port);
             this.start();
+            this.cantJugadores = cantJugadores;
+            this.numJuego = juegoId;
+            this.litaJugadores = new ArrayList<>();
+            this.running = true;
+            this.acumulador = 1;
 
         }catch (IOException e){
             e.printStackTrace();
@@ -62,21 +86,20 @@ public class JuegosServidor extends Thread
     @Override
     public void run()
     {
-        this.running = true;
-        acumulador = 0;
-        while( this.running )
+        while(this.cantJugadores >= this.acumulador )
         {
             try
             {
                 System.out.println("Esperando Jugadores...");
                 Socket NewSocket = this.socket.accept();
-                acumulador += 1;
-                System.out.println("Jugador "+ANSI_BLUE + acumulador+ ANSI_RESET+" encontrado");
-                Jugador jugador = new Jugador(NewSocket,acumulador);
-                JuegoCartas juegoCartas = new JuegoCartas();
-                System.out.println(jugador.getIdentificador());
-                System.out.println(jugador.getConeccion().getSocket().getRemoteSocketAddress().toString());
-                juegoCartas.start();
+                System.out.println("Jugador "+ANSI_BLUE + this.acumulador+ ANSI_RESET+" encontrado");
+                Jugador jugador = new Jugador(NewSocket,this.acumulador);
+                Thread t = new Thread(jugador);
+                t.start();
+                this.litaJugadores.add(jugador);
+                this.acumulador += 1;
+                System.out.println(jugador.toString());
+                //System.out.println(jugador.getConeccion().getSocket().getRemoteSocketAddress().toString());
             }
             catch (IOException e)
             {
@@ -84,5 +107,9 @@ public class JuegosServidor extends Thread
                 stopServer();
             }
         }
+        System.out.println("Jugadores Encontrados...");
+        JuegoCartas juegoCartas = new JuegoCartas();
+        this.running = false;
+        juegoCartas.start();
     }
 }

@@ -2,7 +2,7 @@ import java.net.Socket;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Jugador {
+public class Jugador extends Thread {
      private Coneccion coneccion;
      private int identificador;
      private int comision;
