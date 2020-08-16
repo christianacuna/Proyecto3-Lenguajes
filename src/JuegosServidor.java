@@ -1,4 +1,5 @@
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.ArrayList;
@@ -111,5 +112,14 @@ public class JuegosServidor extends Thread
         JuegoCartas juegoCartas = new JuegoCartas();
         this.running = false;
         juegoCartas.iniciarJuego();
+        try{
+            String line = "Testeo Completo pepe";
+            PrintWriter out = new PrintWriter(this.litaJugadores.get(0).getConeccion().getSocket().getOutputStream(), true);
+            out.println(line);
+        }catch (IOException e){
+            e.printStackTrace();
+            stopServer();
+        }
+
     }
 }
