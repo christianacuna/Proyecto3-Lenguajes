@@ -110,6 +110,6 @@ public class JuegosServidor extends Thread
         System.out.println("Jugadores Encontrados...");
         JuegoCartas juegoCartas = new JuegoCartas();
         this.running = false;
-        juegoCartas.start();
+        juegoCartas.iniciarJuego();
     }
 }
