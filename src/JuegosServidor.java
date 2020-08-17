@@ -64,9 +64,22 @@ public class JuegosServidor extends Thread
     }
     public void stopServer()
     {
-        System.out.println("Deteniendo");
+        System.out.println("Deteniendo..");
         this.running = false;
+        flushClients();
         this.interrupt();
+    }
+    public void flushClients(){
+        int largo = this.litaJugadores.size()-1;
+        System.out.println("Cerrando Coneccion con clientes.");
+        try{
+            while(largo >= 0){
+                this.litaJugadores.get(largo).getConeccion().getSocket().close();
+                largo--;
+            }
+        }catch (IOException e){
+            e.printStackTrace();
+        }
     }
     public void startServer(int port,int juegoId, int cantJugadores)
     {
@@ -120,6 +133,7 @@ public class JuegosServidor extends Thread
             e.printStackTrace();
             stopServer();
         }
+        stopServer();
 
     }
 }

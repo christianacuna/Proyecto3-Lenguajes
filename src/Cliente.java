@@ -13,10 +13,20 @@ public class Cliente {
             System.out.println("Enter lines of text then Ctrl+D or Ctrl+C to quit");
             var in = new Scanner(socket.getInputStream());
             var out = new PrintWriter(socket.getOutputStream(), true);
-            while (scanner.hasNextLine()) {
+            System.out.println(scanner.hasNextLine());
+            System.out.println(socket.isConnected());
+            System.out.println("--");
+            while (scanner.hasNextLine() && socket.getInputStream().read() != -1) {
+                //System.out.println(socket.isConnected());
+                //System.out.println(socket.isClosed());
+                //System.out.println(socket.isBound());
+                //System.out.println(socket.isInputShutdown());
+                //System.out.println(socket.isOutputShutdown());
+                //System.out.println(in.hasNext());
                 out.println(scanner.nextLine());
                 System.out.println(in.nextLine());
             }
+            System.out.println("Conexion terminada");
         }
     }
 }
