@@ -30,7 +30,6 @@ public class Cliente extends JFrame{
             System.out.println(socket.isConnected());
             System.out.println("--");
             String entrada = "No Connection";
-            String entrada2 = entrada;
             if(socket.getInputStream().read() != -1){
                 frame.display(entrada);
             }
@@ -51,9 +50,11 @@ public class Cliente extends JFrame{
                 //System.out.println(linea);
                 System.out.println(entrada);
             }*/
-            System.out.println("Conexion terminada");
+            System.out.println("Conexion terminada por el servidor");
+            JOptionPane.showMessageDialog(null,"Conexion terminada");
         }catch (ConnectException e){
             System.out.println("Servidor "+direccion+" No encontrado");
+            JOptionPane.showMessageDialog(null,"Servidor "+direccion+" No encontrado");
         }
     }
 }
