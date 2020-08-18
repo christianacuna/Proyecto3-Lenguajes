@@ -6,12 +6,13 @@ public class Jugador extends Thread {
      private Coneccion coneccion;
      private int identificador;
      private int comision;
-     private Object mano;
+     private List<Carta> mano;
 
      Jugador(Socket socket, int identificador){
          this.coneccion = new Coneccion(socket);
          this.identificador = identificador;
-
+         this.comision = 1000;
+         this.mano = new ArrayList<Carta>();
      }
 
      public Coneccion getConeccion() {
@@ -24,6 +25,10 @@ public class Jugador extends Thread {
 
      public Object getMano() {
          return mano;
+     }
+
+     public void darCarta(Carta c){
+         this.mano.add(c);
      }
 
      public List<Object> calcularJugada(){

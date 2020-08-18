@@ -9,10 +9,15 @@ public class Mazo {
     }
 
     public Carta getCarta() {
-        return this.cartas.remove(this.cartas.size() -1);
+        return this.cartas.remove(0);
     }
 
     public void repartir(int n, List<Jugador> listaJugadores){
-
+        while (n>0){
+            for (Jugador j: listaJugadores) {
+                j.darCarta(getCarta());
+            }
+            n--;
+        }
     }
 }

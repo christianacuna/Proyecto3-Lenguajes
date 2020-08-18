@@ -109,7 +109,4 @@ public class Analizador {
 
         return b1 || b2 || b3 || b4;
     }
-
-    //public boolean esCartaAlta(List<Carta> cartas){ return true; }
-
 }

@@ -2,7 +2,7 @@ import java.util.List;
 
 public class JuegoCartas {
     private List<Jugador> listaJugadores;
-    //private Mazo mazo;
+    private Mazo mazo;
 
     public void iniciarJuego(){
 
