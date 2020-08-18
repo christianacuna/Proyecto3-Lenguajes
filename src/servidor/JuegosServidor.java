@@ -1,5 +1,7 @@
-package Servidor;
-import Servidor.Jugador;
+package servidor;
+import servidor.juegosCartas.JuegoCartas;
+import servidor.jugadores.Jugador;
+
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.net.ServerSocket;
@@ -27,9 +29,9 @@ public class JuegosServidor extends Thread
     static {
         listajuegos = new HashMap<>();
         listajuegos.put(1, "Hold'em");
-        listajuegos.put(2, "FiveCards");
-        listajuegos.put(3, "Omaha");
-        listajuegos.put(4, "SevenCards");
+        listajuegos.put(2, "Servidor.JuegosCartas.JuegosPoker.FiveCards");
+        listajuegos.put(3, "Servidor.JuegosCartas.JuegosPoker.Omaha");
+        listajuegos.put(4, "Servidor.JuegosCartas.JuegosPoker.SevenCards");
     }
 
     public static void main(String[] args) {

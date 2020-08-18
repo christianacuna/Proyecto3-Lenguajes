@@ -1,4 +1,4 @@
-package Servidor;
+package servidor.juegosCartas;
 public class Carta implements Comparable<Carta>{
     private String palo;
     private int numero;

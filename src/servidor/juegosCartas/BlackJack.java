@@ -1,4 +1,6 @@
-public class Omaha extends Poker{
+package servidor.juegosCartas;
+
+public class BlackJack extends JuegoCartas {
     public void ejecutarRonda(){
 
     }

@@ -1,4 +1,6 @@
-public class SevenCards extends Poker{
+package servidor.juegosCartas.juegosPoker;
+
+public class TexasHoldem extends Poker {
     public void ejecutarRonda(){
 
     }

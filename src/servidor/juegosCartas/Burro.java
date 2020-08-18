@@ -1,3 +1,5 @@
+package servidor.juegosCartas;
+
 public class Burro extends JuegoCartas{
     public void ejecutarRonda(){
 

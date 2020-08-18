@@ -1,5 +1,7 @@
-package Servidor;
-import Servidor.Carta;
+package servidor.jugadores;
+import servidor.juegosCartas.Carta;
+import servidor.conecciones.Coneccion;
+
 import java.net.Socket;
 import java.util.ArrayList;
 import java.util.List;
@@ -10,7 +12,7 @@ public class Jugador extends Thread {
      private int comision;
      private List<Carta> mano;
 
-     Jugador(Socket socket, int identificador){
+     public Jugador(Socket socket, int identificador){
          this.coneccion = new Coneccion(socket);
          this.identificador = identificador;
          this.comision = 1000;

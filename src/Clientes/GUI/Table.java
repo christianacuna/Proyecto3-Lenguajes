@@ -161,7 +161,7 @@ public class Table extends JPanel
                 staybutton.setEnabled(false);
                 dealbutton.setEnabled(false);
                 playagainbutton.setEnabled(true);
-                winlosebox.setText("BlackJack");
+                winlosebox.setText("Servidor.JuegosCartas.BlackJack");
             }*/
 
             add(dcardPanel,BorderLayout.CENTER);

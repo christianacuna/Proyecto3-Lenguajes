@@ -1,8 +1,9 @@
-package Servidor;
-import Servidor.JuegoCartas;
+package servidor.juegosCartas.juegosPoker;
+import servidor.juegosCartas.JuegoCartas;
+
 import java.util.List;
 
-public class Poker extends JuegoCartas{
+public class Poker extends JuegoCartas {
     List<JuegoCartas> modos;
     int pot;
 

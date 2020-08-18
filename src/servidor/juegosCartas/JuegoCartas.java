@@ -1,5 +1,5 @@
-package Servidor;
-import Servidor.Jugador;
+package servidor.juegosCartas;
+import servidor.jugadores.Jugador;
 import java.util.List;
 
 public class JuegoCartas {
