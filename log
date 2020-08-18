@@ -1,0 +1,167 @@
+[33mcommit e22cccc77fb889a86abbf8dd462f2a0cb947cdf4[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: Sebastián <sebas.mqt@gmail.com>
+Date:   Tue Aug 18 03:59:59 2020 -0600
+
+    documentacion
+
+[33mcommit 2375565cf54eb1489f366ab90b1ba1d7f21d5db3[m
+Author: christianacuna <christianlorenso@hotmail.com>
+Date:   Tue Aug 18 02:56:07 2020 -0600
+
+    Implementacion extra sin errores.
+
+[33mcommit 4923566a80b524b80c51459cee9a774fb41f16df[m
+Author: Sebastián <sebas.mqt@gmail.com>
+Date:   Tue Aug 18 02:51:41 2020 -0600
+
+    diagrama de clases
+
+[33mcommit 2a7355cccb8f4bbff62870d97742951f8d8db39b[m
+Author: christianacuna <christianlorenso@hotmail.com>
+Date:   Tue Aug 18 02:15:33 2020 -0600
+
+    Implementacion extra sin errores.
+
+[33mcommit ab5dfb0b2d87600958f7e4555a52bd8fb6dcfd1e[m
+Author: christianacuna <christianlorenso@hotmail.com>
+Date:   Tue Aug 18 02:14:06 2020 -0600
+
+    Implementacion extra sin errores.
+
+[33mcommit dfa079f4762dc6e4cc76c40575498e4767c30cd8[m
+Author: Sebastián <sebas.mqt@gmail.com>
+Date:   Tue Aug 18 01:48:36 2020 -0600
+
+    organizacion
+
+[33mcommit a761afe8d225fb9441a7787b076ee18ef2c627b4[m
+Author: Sebastián <sebas.mqt@gmail.com>
+Date:   Tue Aug 18 01:44:13 2020 -0600
+
+    organizacion
+
+[33mcommit 003af3a4e0425693ddb8e02ebb6286f58cdec95e[m
+Author: christianacuna <christianlorenso@hotmail.com>
+Date:   Tue Aug 18 01:42:40 2020 -0600
+
+    Implementacion extra sin errores.
+
+[33mcommit c2d3f8e6f6659fe6e66641b32d7a0f09964474f7[m
+Author: Sebastián <sebas.mqt@gmail.com>
+Date:   Tue Aug 18 01:32:23 2020 -0600
+
+    Poker
+
+[33mcommit 8bbfddc8cdf453b940af47be80d6b1c5b7231b16[m
+Author: christianacuna <christianlorenso@hotmail.com>
+Date:   Tue Aug 18 00:39:26 2020 -0600
+
+    Implementacion extra sin errores.
+
+[33mcommit f7482925c4a8229bd753b63a954b7370838153d0[m
+Author: christianacuna <christianlorenso@hotmail.com>
+Date:   Tue Aug 18 00:35:04 2020 -0600
+
+    Implementacion extra sin errores.
+
+[33mcommit 7806c333575abe1e3bd5af5a347d5ed8d3d72ec9[m
+Author: christianacuna <christianlorenso@hotmail.com>
+Date:   Mon Aug 17 22:47:14 2020 -0600
+
+    Implementacion extra sin errores.
+
+[33mcommit da414a9e94ce82fc2615103857ea165a592954cb[m
+Author: Sebastián <sebas.mqt@gmail.com>
+Date:   Mon Aug 17 21:05:59 2020 -0600
+
+    cambios a Carta
+
+[33mcommit ba34ebde52dfe63527c8c881ea3148a6185acc32[m
+Author: christianacuna <christianlorenso@hotmail.com>
+Date:   Mon Aug 17 20:55:20 2020 -0600
+
+    Implementacion extra sin errores.
+
+[33mcommit 57ad3454cffedf9430bb356e373021a2f6e2e2d1[m
+Author: christianacuna <christianlorenso@hotmail.com>
+Date:   Mon Aug 17 20:49:08 2020 -0600
+
+    Implementacion extra sin errores.
+
+[33mcommit 676fb652162889163e41f65eda9bf3f35f625da6[m
+Author: christianacuna <christianlorenso@hotmail.com>
+Date:   Mon Aug 17 04:34:33 2020 -0600
+
+    Implementacion extra sin errores.
+
+[33mcommit de284ff4b64ae214759e26322d2aa7121a668334[m
+Author: christianacuna <christianlorenso@hotmail.com>
+Date:   Sun Aug 16 02:13:07 2020 -0600
+
+    Implementacion extra sin errores.
+
+[33mcommit 2b5e1d84e5f45ef3f13934386b491092a78c08db[m
+Author: Sebastián <sebas.mqt@gmail.com>
+Date:   Mon Aug 17 20:46:19 2020 -0600
+
+    se agrega el analizador de manos
+
+[33mcommit a6a8d68dc51d9eac4887762ffa80a593afe42686[m
+Author: christianacuna <christianlorenso@hotmail.com>
+Date:   Sun Aug 16 01:57:35 2020 -0600
+
+    Implementacion extra sin errores.
+
+[33mcommit 78646a591f1eccff13f1a5a47a8482ee8dc9de78[m
+Author: christianacuna <christianlorenso@hotmail.com>
+Date:   Sun Aug 16 01:54:47 2020 -0600
+
+    Implementacion extra sin errores.
+
+[33mcommit 8a6657a8348ca0c0be261e1e543057e4fde5ef0c[m
+Author: Sebastián <sebas.mqt@gmail.com>
+Date:   Sat Aug 15 13:55:46 2020 -0600
+
+    se modifica JuegoCartas
+
+[33mcommit f63e6b8e32eb183997d90651f87f1d0c09ae07f8[m
+Author: Sebastián <sebas.mqt@gmail.com>
+Date:   Sat Aug 15 13:53:30 2020 -0600
+
+    se agregan carta, mazo y mano
+
+[33mcommit ce97d55219e21f581a0cb7958ba036bd2ff0d6c1[m
+Author: christianacuna <christianlorenso@hotmail.com>
+Date:   Sat Aug 15 00:43:02 2020 -0600
+
+    Implementacion extra sin errores.
+
+[33mcommit a8af737f9d190004a776d19d3d704f4b830e7974[m
+Author: christianacuna <christianlorenso@hotmail.com>
+Date:   Fri Aug 14 22:45:16 2020 -0600
+
+    Implementacion extra sin errores.
+
+[33mcommit 1d07c2e35195aa3005f6166cb84170248498380b[m
+Author: christianacuna <christianlorenso@hotmail.com>
+Date:   Fri Aug 14 20:58:30 2020 -0600
+
+    Implementacion extra sin errores.
+
+[33mcommit e36a7238893dfeda9c7f13fb3216c5723e489fcf[m
+Author: christianacuna <christianlorenso@hotmail.com>
+Date:   Fri Aug 14 20:58:07 2020 -0600
+
+    Implementacion extra sin errores.
+
+[33mcommit 576e0316cf4820f8d63b077e2af3dff2c6e2fc51[m
+Author: christianacuna <christianlorenso@hotmail.com>
+Date:   Fri Aug 14 19:43:42 2020 -0600
+
+    Semi implementacion del jugador
+
+[33mcommit 677d2e521f22d28a368705fed0f44ef60ca57f9a[m
+Author: christianacuna <christianlorenso@hotmail.com>
+Date:   Fri Aug 14 19:43:20 2020 -0600
+
+    Semi implementacion del servidor de juegos
