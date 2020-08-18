@@ -2,10 +2,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.net.ServerSocket;
 import java.net.Socket;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 public class JuegosServidor extends Thread
 {
@@ -23,7 +20,15 @@ public class JuegosServidor extends Thread
     public static final String ANSI_WHITE = "\u001B[37m";
     private int cantJugadores;
     private int numJuego;
-    private List<Jugador> litaJugadores;
+    private List<Jugador> listaJugadores;
+    private static Map<Integer,String> listajuegos;
+    static {
+        listajuegos = new HashMap<>();
+        listajuegos.put(1, "Hold'em");
+        listajuegos.put(2, "FiveCards");
+        listajuegos.put(3, "Omaha");
+        listajuegos.put(4, "SevenCards");
+    }
 
     public static void main(String[] args) {
 
@@ -35,11 +40,13 @@ public class JuegosServidor extends Thread
         server.startServer(port,numeroJuego,cantJugadores);
     }
     static private int menu1(){
-        System.out.println(ANSI_CYAN+"Seleccione el juego de cartas [1-4]"+ANSI_RESET);
-        System.out.println("1 - Hold'em");
-        System.out.println("2 - FiveCards");
-        System.out.println("3 - Omaha");
-        System.out.println("4 - SevenCards");
+        int cantJuegos = listajuegos.size();
+        int acum = 1;
+        System.out.println(ANSI_CYAN+"Seleccione el juego de cartas [1-"+cantJuegos+"]"+ANSI_RESET);
+        while(acum <= cantJuegos){
+            System.out.println(acum+" - "+listajuegos.get(acum));
+            acum++;
+        }
         Scanner s = new Scanner(System.in);
         int n = s.nextInt();
         if (n > 0 && n < 5){
@@ -70,26 +77,39 @@ public class JuegosServidor extends Thread
         this.interrupt();
     }
     public void flushClients(){
-        int largo = this.litaJugadores.size()-1;
+        int largo = this.listaJugadores.size()-1;
         System.out.println("Cerrando Coneccion con clientes.");
         try{
             while(largo >= 0){
-                this.litaJugadores.get(largo).getConeccion().getSocket().close();
+                this.listaJugadores.get(largo).getConeccion().getSocket().close();
                 largo--;
             }
         }catch (IOException e){
             e.printStackTrace();
         }
     }
+    public void enviarMensajeClientes(String linea){
+        linea = " "+linea;
+        int acum = 0;
+        try{
+            while(acum < cantJugadores){
+                PrintWriter out = new PrintWriter(this.listaJugadores.get(acum).getConeccion().getSocket().getOutputStream(), true);
+                out.println(linea);
+                acum++;
+            }
+        }catch (IOException e){
+            e.printStackTrace();
+            stopServer();
+        }
+    }
     public void startServer(int port,int juegoId, int cantJugadores)
     {
         try{
-
             this.socket = new ServerSocket(port);
             this.start();
             this.cantJugadores = cantJugadores;
             this.numJuego = juegoId;
-            this.litaJugadores = new ArrayList<>();
+            this.listaJugadores = new ArrayList<>();
             this.running = true;
             this.acumulador = 1;
 
@@ -110,7 +130,7 @@ public class JuegosServidor extends Thread
                 Jugador jugador = new Jugador(NewSocket,this.acumulador);
                 Thread t = new Thread(jugador);
                 t.start();
-                this.litaJugadores.add(jugador);
+                this.listaJugadores.add(jugador);
                 this.acumulador += 1;
                 System.out.println(jugador.toString());
                 //System.out.println(jugador.getConeccion().getSocket().getRemoteSocketAddress().toString());
@@ -122,17 +142,11 @@ public class JuegosServidor extends Thread
             }
         }
         System.out.println("Jugadores Encontrados...");
+        System.out.println(listajuegos.get(this.numJuego));
+        enviarMensajeClientes(listajuegos.get(this.numJuego));
         JuegoCartas juegoCartas = new JuegoCartas();
         this.running = false;
         juegoCartas.iniciarJuego();
-        try{
-            String line = "Testeo Completo pepe";
-            PrintWriter out = new PrintWriter(this.litaJugadores.get(0).getConeccion().getSocket().getOutputStream(), true);
-            out.println(line);
-        }catch (IOException e){
-            e.printStackTrace();
-            stopServer();
-        }
         stopServer();
 
     }
