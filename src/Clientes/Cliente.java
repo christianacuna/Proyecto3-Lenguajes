@@ -51,10 +51,10 @@ public class Cliente extends JFrame{
                 System.out.println(entrada);
             }*/
             System.out.println("Conexion terminada por el servidor");
-            JOptionPane.showMessageDialog(null,"Conexion terminada");
+            JOptionPane.showMessageDialog(null,"Conexion terminada","Terminated", JOptionPane.WARNING_MESSAGE);
         }catch (ConnectException e){
             System.out.println("Servidor "+direccion+" No encontrado");
-            JOptionPane.showMessageDialog(null,"Servidor "+direccion+" No encontrado");
+            JOptionPane.showMessageDialog(null,"Servidor "+direccion+" No encontrado","Error 404", JOptionPane.ERROR_MESSAGE);
         }
     }
 }
