@@ -1,4 +1,4 @@
-package Clientes.GUI;
+package clientes.gui;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;

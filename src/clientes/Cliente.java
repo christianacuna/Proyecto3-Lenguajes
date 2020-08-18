@@ -1,6 +1,6 @@
-package Clientes;
+package clientes;
 
-import Clientes.GUI.Table;
+import clientes.gui.Table;
 import javax.swing.*;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;

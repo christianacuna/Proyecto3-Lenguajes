@@ -1,4 +1,4 @@
-package Clientes;
+package clientes;
 
 public class Carta implements Comparable<Carta>{
     private String palo;
