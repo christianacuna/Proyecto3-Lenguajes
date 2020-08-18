@@ -29,9 +29,9 @@ public class JuegosServidor extends Thread
     static {
         listajuegos = new HashMap<>();
         listajuegos.put(1, "Hold'em");
-        listajuegos.put(2, "Servidor.JuegosCartas.JuegosPoker.FiveCards");
-        listajuegos.put(3, "Servidor.JuegosCartas.JuegosPoker.Omaha");
-        listajuegos.put(4, "Servidor.JuegosCartas.JuegosPoker.SevenCards");
+        listajuegos.put(2, "FiveCards");
+        listajuegos.put(3, "Omaha");
+        listajuegos.put(4, "SevenCards");
     }
 
     public static void main(String[] args) {
