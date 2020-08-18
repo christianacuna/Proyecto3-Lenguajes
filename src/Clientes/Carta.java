@@ -1,6 +1,6 @@
 package Clientes;
 
-public class Carta {
+public class Carta implements Comparable<Carta>{
     private String palo;
     private int numero;
     private boolean visible;
@@ -40,7 +40,7 @@ public class Carta {
         return numero;
     }
 
-    public boolean isVisible() {
+    public boolean esVisible() {
         return visible;
     }
 
@@ -54,6 +54,7 @@ public class Carta {
         return recurso;
     }
 
+    @Override
     public int compareTo(Carta c) {
         return this.getNumero() - c.getNumero();
     }

@@ -2,6 +2,7 @@ public class Carta implements Comparable<Carta>{
     private String palo;
     private int numero;
     private boolean visible;
+
     public Carta(String palo,int numero,boolean visible){
         this.palo=palo;
         this.numero=numero;
