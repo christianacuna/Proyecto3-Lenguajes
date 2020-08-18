@@ -1,5 +1,6 @@
 package Clientes;
 
+import Clientes.GUI.MsjBox;
 import Clientes.GUI.Table;
 
 import java.io.BufferedReader;
@@ -17,6 +18,10 @@ public class Cliente {
         String ip = scanner.nextLine();
         String[] address = ip.split(":");
         Table frame = new Table();
+        MsjBox msjBox = new MsjBox();
+        msjBox.display();
+        msjBox.waitUntilready();
+        System.out.println(msjBox.getCampotexto());
         try (Socket socket = new Socket(address[0],Integer.parseInt(address[1]))) {
             System.out.println("Enter lines of text then Ctrl+D or Ctrl+C to quit");
             var in = new Scanner(socket.getInputStream());
