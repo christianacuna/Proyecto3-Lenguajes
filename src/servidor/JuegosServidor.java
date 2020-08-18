@@ -82,7 +82,7 @@ public class JuegosServidor extends Thread
     }
     public void flushClients(){
         int largo = this.listaJugadores.size()-1;
-        System.out.println("Cerrando Coneccion con clientes.");
+        System.out.println("Cerrando Conexion con clientes.");
         try{
             while(largo >= 0){
                 this.listaJugadores.get(largo).getConeccion().getSocket().close();

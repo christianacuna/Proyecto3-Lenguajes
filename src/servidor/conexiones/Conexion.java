@@ -1,10 +1,10 @@
-package servidor.conecciones;
+package servidor.conexiones;
 import java.net.Socket;
 
-public class Coneccion {
+public class Conexion {
     private Socket socket;
 
-    public Coneccion(Socket socket){
+    public Conexion(Socket socket){
         this.socket = socket;
     }
     public Socket getSocket() {
