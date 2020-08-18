@@ -1,4 +1,4 @@
-public class Carta{
+public class Carta implements Comparable<Carta>{
     private String color;
     private String palo;
     private int numero;
@@ -16,10 +16,11 @@ public class Carta{
         return numero;
     }
 
-    public boolean isVisible() {
+    public boolean esVisible() {
         return visible;
     }
 
+    @Override
     public int compareTo(Carta c) {
         return this.getNumero() - c.getNumero();
     }
